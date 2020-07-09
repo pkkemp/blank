@@ -1,26 +1,28 @@
 {{ define "main" }}
 	<main>
 		<article>
-			<h1>{{ .Title }}</h1>
-			<time>{{ .Date.Format "02.01.2006 15:04" }}</time>
-			<div>
-				{{ .Content }}
-			</div>
-			{{ with .Params.tags }}
-			<div>
-				<ul id="tags">
-					{{ range . }}
-					<li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
-					{{ end }}
-				</ul>
-			</div>
-			{{ end }}
-			{{ with .Site.DisqusShortname }}
-			<div>
-				{{ template "_internal/disqus.html" . }}
-			</div>
-			{{ end }}
+			<header class="masthead" style="background-image:url('{{ .Params.image }}');">
+	        <div class="overlay"></div>
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-md-10 col-lg-8 mx-auto">
+	                    <div class="post-heading">
+												<h1>{{ .Title }}</h1>
+	                        <h2 class="subheading"></h2><span class="meta">Posted on <time>{{ .Date.Format "January 2, 2006" }}</time>
+</span></div>
+	                </div>
+	            </div>
+	        </div>
+	    </header>
+			<article>
+					<div class="container">
+							<div class="row">
+									<div class="col-md-10 col-lg-8 mx-auto">
+										{{ .Content }}
+									</div>
+							</div>
+					</div>
+
 		</article>
 	</main>
-{{ partial "sidebar.html" . }}
 {{ end }}

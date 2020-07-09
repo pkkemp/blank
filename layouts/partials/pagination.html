@@ -1,9 +1,9 @@
 <div>
 {{ if .Paginator.HasPrev }}
-	<a href="{{ .Paginator.Prev.URL }}">Previous Page</a>
+<div class="clearfix"><button class="btn btn-primary float-right" href="{{ .Paginator.Prev.URL }}" type="button">Previous Page&nbsp;⇒</button></div>
 {{ end }}
-{{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}
 {{ if .Paginator.HasNext }}
+<div class="clearfix"><button class="btn btn-primary float-right" href="{{ .Paginator.Prev.URL }}" type="button">Next Page&nbsp;⇒</button></div>
 	<a href="{{ .Paginator.Next.URL }}">Next Page</a>
 {{ end }}
 </div>
