@@ -8,7 +8,7 @@
 	                <div class="col-md-10 col-lg-8 mx-auto">
 	                    <div class="post-heading">
 												<h1>{{ .Title }}</h1>
-	                        <h2 class="subheading"></h2><span class="meta">Posted on <time>{{ .Date.Format "January 2, 2006" }}</time>
+	                        <h2 class="subheading"></h2><span class="meta">Posted on <time>{{ .Date.Format "January 2, 2006" }}</time> by {{ .Params.author }}
 </span></div>
 	                </div>
 	            </div>
