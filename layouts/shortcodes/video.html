@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="{{ $.Page.Site.Params.cdnURL }}video/assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{ $.Page.Site.Params.cdnURL }}video/assets/css/styles.min.css">
+<link rel="stylesheet" href="{{ $.Page.Site.Params.cdnURL }}video/assets/css/video.css">
+<div class="container">
+    <video controls playsinline poster="{{ .Get `PosterURL` }}" id="player">
+        <!-- Video files -->
+        <source src="{{ .Get `VideoURL` }}" type="video/mp4" size="1080">
+        <!-- Fallback for browsers that don't support the <video> element -->
+        <a href="{{ .Get `VideoURL` }}" download>Download</a>
+    </video>
+</div>
+
+<script src="{{ $.Page.Site.Params.cdnURL }}video/assets/js/jquery.min.js"></script>
+<script src="{{ $.Page.Site.Params.cdnURL }}video/assets/js/video.js"></script>
+<script src="{{ $.Page.Site.Params.cdnURL }}video/assets/plyr/js/plyr.js"></script>
+<script src="{{ $.Page.Site.Params.cdnURL }}video/assets/bootstrap/js/bootstrap.min.js"></script>
