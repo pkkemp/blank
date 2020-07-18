@@ -17,6 +17,12 @@
 										<h1>{{ .Title }}</h1>
 											<h2 class="subheading"></h2><span class="meta">Posted on <time>{{ .Date.Format "January 2, 2006" }}</time> by {{ .Params.author }}
 											</span>
+											<div>
+
+												Tagged as:
+												{{ range $i, $e := (.GetTerms "tags") }}{{ if $i }} | {{ end }}<a href="{{ .Permalink }}">{{ .LinkTitle }}</a>{{ end }}
+
+										 </div>
 																			</div>
 										{{ .Content }}
 									</div>
@@ -24,6 +30,6 @@
 					</div>
 
 		</article>
-		
+
 	</main>
 {{ end }}
